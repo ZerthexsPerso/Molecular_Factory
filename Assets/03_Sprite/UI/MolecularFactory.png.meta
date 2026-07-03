@@ -1,0 +1,654 @@
+fileFormatVersion: 2
+guid: 91fa0ae2f760e364487275d4ef3d3755
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5277382396960239767
+    second: MolecularFactory_0
+  - first:
+      213: 1160440114062416946
+    second: MolecularFactory_1
+  - first:
+      213: 7779407128513044745
+    second: MolecularFactory_2
+  - first:
+      213: -2069641437055918625
+    second: MolecularFactory_3
+  - first:
+      213: 5323786696703321253
+    second: MolecularFactory_4
+  - first:
+      213: -8508932832445445975
+    second: MolecularFactory_5
+  - first:
+      213: -2306000273133430806
+    second: MolecularFactory_6
+  - first:
+      213: -2371459137739855573
+    second: MolecularFactory_7
+  - first:
+      213: -8818662493279295165
+    second: MolecularFactory_8
+  - first:
+      213: 7744322884189021130
+    second: MolecularFactory_9
+  - first:
+      213: 2576886115026840898
+    second: MolecularFactory_10
+  - first:
+      213: 5344649846048740775
+    second: MolecularFactory_11
+  - first:
+      213: 5689475370624037674
+    second: MolecularFactory_12
+  - first:
+      213: 658982287810153897
+    second: MolecularFactory_13
+  - first:
+      213: 1539422077261266196
+    second: MolecularFactory_14
+  - first:
+      213: 784288809833855165
+    second: MolecularFactory_15
+  - first:
+      213: -4844482095302760430
+    second: MolecularFactory_16
+  - first:
+      213: 3801999113971621768
+    second: MolecularFactory_17
+  - first:
+      213: 519516439491170242
+    second: MolecularFactory_18
+  - first:
+      213: -3093010562613265386
+    second: MolecularFactory_19
+  - first:
+      213: 9188061440096695066
+    second: MolecularFactory_20
+  - first:
+      213: 3471305389983471441
+    second: MolecularFactory_21
+  - first:
+      213: -5358977454924373723
+    second: MolecularFactory_22
+  - first:
+      213: -8321439332919060198
+    second: MolecularFactory_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MolecularFactory_0
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 741
+        width: 89
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 790f6ba44570d3940800000000000000
+      internalID: 5277382396960239767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MolecularFactory_1
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 706
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23cddcda226ba1010800000000000000
+      internalID: 1160440114062416946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MolecularFactory_6
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 591
+        width: 118
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae79de328f07fffd0800000000000000
+      internalID: -2306000273133430806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MolecularFactory_7
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 498
+        width: 262
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 91, y: 0, z: 161, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2969af8a72e61fd0800000000000000
+      internalID: -2371459137739855573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MolecularFactory_8
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 529
+        width: 33
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 85, z: 0, w: 84}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 349e6068f21dd9580800000000000000
+      internalID: -8818662493279295165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MolecularFactory_9
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 506
+        width: 35
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 69, z: 0, w: 92}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac3e30ac1ac597b60800000000000000
+      internalID: 7744322884189021130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MolecularFactory_10
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 445
+        width: 136
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24dafc8c440f2c320800000000000000
+      internalID: 2576886115026840898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MolecularFactory_13
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 275
+        width: 138
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9adc23a36ec252900800000000000000
+      internalID: 658982287810153897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MolecularFactory_14
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 402
+        width: 155
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41d3d8a19302d5510800000000000000
+      internalID: 1539422077261266196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MolecularFactory_15
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 402
+        width: 155
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db8f577648a52ea00800000000000000
+      internalID: 784288809833855165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MolecularFactory_16
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 403
+        width: 54
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2182db49331f4ccb0800000000000000
+      internalID: -4844482095302760430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MolecularFactory_17
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 151
+        width: 357
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88fd0a0ec0a63c430800000000000000
+      internalID: 3801999113971621768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MolecularFactory_18
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 262
+        width: 379
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 70, z: 0, w: 58}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cfc8def271b53700800000000000000
+      internalID: 519516439491170242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MolecularFactory_22
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 136
+        width: 128
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 521e7e7d56611a5b0800000000000000
+      internalID: -5358977454924373723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MolecularFactory_23
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 0
+        width: 409
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 63, z: 0, w: 8}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a19556df30f448c80800000000000000
+      internalID: -8321439332919060198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MolecularFactory_2
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 50
+        width: 356
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 34, z: 0, w: 149}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e8fbcc7090da24083039253349f6ed
+      internalID: 7779407128513044745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MolecularFactory_3
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 551
+        width: 84
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6147b60ec9370ab418289c55828a9705
+      internalID: -2069641437055918625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MolecularFactory_4
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 461
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49a789b5c135be54b8737ecc3a1df496
+      internalID: 5323786696703321253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MolecularFactory_5
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 358
+        width: 85
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fbb290598e5bcf47963b0bdc84632c1
+      internalID: -8508932832445445975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MolecularFactory_11
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 275
+        width: 84
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e82963632f39f7e48b398d706a8ae292
+      internalID: 5344649846048740775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b91d363322a68254cb0af43f685631e1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      MolecularFactory_0: 5277382396960239767
+      MolecularFactory_1: 1160440114062416946
+      MolecularFactory_10: 2576886115026840898
+      MolecularFactory_11: 5344649846048740775
+      MolecularFactory_12: 5689475370624037674
+      MolecularFactory_13: 658982287810153897
+      MolecularFactory_14: 1539422077261266196
+      MolecularFactory_15: 784288809833855165
+      MolecularFactory_16: -4844482095302760430
+      MolecularFactory_17: 3801999113971621768
+      MolecularFactory_18: 519516439491170242
+      MolecularFactory_19: -3093010562613265386
+      MolecularFactory_2: 7779407128513044745
+      MolecularFactory_20: 9188061440096695066
+      MolecularFactory_21: 3471305389983471441
+      MolecularFactory_22: -5358977454924373723
+      MolecularFactory_23: -8321439332919060198
+      MolecularFactory_24: -663245770
+      MolecularFactory_3: -2069641437055918625
+      MolecularFactory_4: 5323786696703321253
+      MolecularFactory_5: -8508932832445445975
+      MolecularFactory_6: -2306000273133430806
+      MolecularFactory_7: -2371459137739855573
+      MolecularFactory_8: -8818662493279295165
+      MolecularFactory_9: 7744322884189021130
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -7,28 +7,26 @@ public class ConditionalHidePropertyDrawer : PropertyDrawer
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
         ConditionalHideAttribute CHA = (ConditionalHideAttribute)attribute;
-        bool enabled = GetConditionalHideAttributeResult(CHA, property);
+        SerializedProperty enumProperty = property.serializedObject.FindProperty(CHA.propertyName);
 
-        bool wasEnabled = GUI.enabled;
-        GUI.enabled = enabled;
-        if (enabled)
+        if (enumProperty == null || enumProperty.enumValueIndex != CHA.enumValue)
         {
-            EditorGUI.PropertyField(position, property, label, true);
+            return; 
         }
-        GUI.enabled = wasEnabled;
+
+        EditorGUI.PropertyField(position, property, label, true);
     }
 
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
-        ConditionalHideAttribute condHAtt = (ConditionalHideAttribute)attribute;
-        bool enabled = GetConditionalHideAttributeResult(condHAtt, property);
-        return enabled ? EditorGUI.GetPropertyHeight(property, label) : -EditorGUIUtility.standardVerticalSpacing;
-    }
+        ConditionalHideAttribute CHA = (ConditionalHideAttribute)attribute;
+        SerializedProperty enumProperty = property.serializedObject.FindProperty(CHA.propertyName);
 
-    private bool GetConditionalHideAttributeResult(ConditionalHideAttribute condHAtt, SerializedProperty property)
-    {
-        SerializedProperty enumProperty = property.serializedObject.FindProperty(condHAtt.propertyName);
-        if (enumProperty == null) return true;
-        return enumProperty.enumValueIndex == condHAtt.enumValue;
+        if (enumProperty == null || enumProperty.enumValueIndex != CHA.enumValue)
+        {
+            return 0f;
+        }
+
+        return EditorGUI.GetPropertyHeight(property, label);
     }
 }

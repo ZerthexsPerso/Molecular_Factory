@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25173e40330565a4babd5c07bf0c8a77, type: 3}
-  m_Name: Recipe 2
+  m_Script: {fileID: 11500000, guid: 76ce389c22169a343a71af6ec2e5e1c5, type: 3}
+  m_Name: Recipe
   m_EditorClassIdentifier: Assembly-CSharp::Recipe
   type: 0
-  pipiValue: 0
-  cacaValue: 2
-  petValue: 

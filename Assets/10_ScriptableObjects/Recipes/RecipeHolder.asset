@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: RecipeHolder
   m_EditorClassIdentifier: Assembly-CSharp::RecipeHolder
   type: 0
+  simpleLC:
+  - {fileID: 11400000, guid: 639d292b82a856c4d89a450d283f1977, type: 2}
   doubleLC: []
   tripleLC: []
   quadrupleLC: []

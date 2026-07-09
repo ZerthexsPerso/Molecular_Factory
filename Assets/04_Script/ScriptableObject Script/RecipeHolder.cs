@@ -1,10 +1,12 @@
 using UnityEngine;
+using static Recipe;
 
 [CreateAssetMenu(fileName = "RecipeHolder", menuName = "Scriptable Objects/RecipeHolder")]
 public class RecipeHolder : ScriptableObject
 {
     public enum RecipeType
     {
+        SimpleLiaisonChimique,
         DoubleLiaisonChimique,
         TripleLiaisonChimique,
         QuadrupleLiaisonChimique
@@ -12,12 +14,15 @@ public class RecipeHolder : ScriptableObject
 
     [SerializeField] private RecipeType type;
 
+    [ConditionalHide("type", (int)RecipeType.SimpleLiaisonChimique)]
+    [SerializeField] public RecipeSimpleLiaisonChimique[] simpleLC;
+
     [ConditionalHide("type", (int)RecipeType.DoubleLiaisonChimique)]
-    [SerializeField] private Recipe[] doubleLC;
+    [SerializeField] public RecipeDoubleLiaisonChimique[] doubleLC;
 
     [ConditionalHide("type", (int)RecipeType.TripleLiaisonChimique)]
-    [SerializeField] private Recipe[] tripleLC;
+    [SerializeField] public RecipeTripleLiaisonChimique[] tripleLC;
 
     [ConditionalHide("type", (int)RecipeType.QuadrupleLiaisonChimique)]
-    [SerializeField] private Recipe[] quadrupleLC;
+    [SerializeField] public RecipeQuadrupleLiaisonChimique[] quadrupleLC;
 }

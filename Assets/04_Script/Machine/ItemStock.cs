@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public struct AtomStock
+public struct ItemStock
 {
     public string name;
     public int amountInStock;

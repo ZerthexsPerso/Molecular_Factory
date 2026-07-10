@@ -44,7 +44,7 @@ public class InputManager : MonoBehaviour
 		Vector3 mouseWorldPosition = camera.ScreenToWorldPoint(mousePosition);
 		OnMouseWorldUpdate?.Invoke(mouseWorldPosition);
 
-		Vector2 movement = inputs.FindAction("Movement").ReadValue<Vector2>();
+		Vector2 movement = inputs.FindAction(MoveActionName).ReadValue<Vector2>();
         OnMoveUpdate?.Invoke(movement);
 
     }

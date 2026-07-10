@@ -7,9 +7,11 @@ public class InputManager : MonoBehaviour
 	public const string TargetActionName = "Target";
 	public const string MainInteraction = "Main Interaction";
 	public const string SecondaryInteraction = "Secondary Interaction";
+	public const string MoveActionName = "Movement";
 
-	public static event Action<Vector2> OnMouseScreenUpdate;
-	public static event Action<Vector3> OnMouseWorldUpdate;
+    public static event Action<Vector2> OnMouseScreenUpdate;
+	public static event Action<Vector2> OnMoveUpdate;
+    public static event Action<Vector3> OnMouseWorldUpdate;
 
 	public static event Action OnMainInteraction;
 	public static event Action OnSecondaryInteraction;
@@ -27,8 +29,8 @@ public class InputManager : MonoBehaviour
 	
 	private void OnDisable()
 	{
-		inputs.FindAction(MainInteraction).performed += InvokeMainInteraction;
-		inputs.FindAction(SecondaryInteraction).performed += InvokeSecondaryInteraction;
+		inputs.FindAction(MainInteraction).performed -= InvokeMainInteraction;
+		inputs.FindAction(SecondaryInteraction).performed -= InvokeSecondaryInteraction;
 		
 		
 	}
@@ -41,8 +43,11 @@ public class InputManager : MonoBehaviour
 
 		Vector3 mouseWorldPosition = camera.ScreenToWorldPoint(mousePosition);
 		OnMouseWorldUpdate?.Invoke(mouseWorldPosition);
-		
-	}
+
+		Vector2 movement = inputs.FindAction("Movement").ReadValue<Vector2>();
+        OnMoveUpdate?.Invoke(movement);
+
+    }
 
 	private void InvokeMainInteraction(InputAction.CallbackContext context)
 	{

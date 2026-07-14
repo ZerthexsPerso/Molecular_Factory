@@ -21,7 +21,6 @@ public class MachineTemp : MonoBehaviour
 
     [Header("Liked Output Pipes")]
     public TuyauTemp outputPipe1;
-    public TuyauTemp outputPipe2;
 
     [Header("Stats")]
     [HideInInspector] public int pipeSpeed = 1;

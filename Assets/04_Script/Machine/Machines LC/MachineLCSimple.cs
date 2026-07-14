@@ -1,13 +1,7 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class MachineTemp : MonoBehaviour
+public class MachineLCSimple : MachineLC
 {
-    [Header ("Recipes")]
-    public RecipeHolder recipeCatalogue;
-    [ReadOnly] public Recipe activeRecipe;
-
     [Header("Input Items Stocked")]
     public ItemStock inputStock1;
     public ItemStock inputStock2;
@@ -15,34 +9,14 @@ public class MachineTemp : MonoBehaviour
     [Header("Output Items Stocked")]
     public ItemStock outputStock;
 
-    [Header("Liked Input Pipes")]
-    public TuyauTemp inputPipe1; 
+    [Header("Linked Input Pipes")]
+    public TuyauTemp inputPipe1;
     public TuyauTemp inputPipe2;
 
-    [Header("Liked Output Pipes")]
-    public TuyauTemp outputPipe1;
+    [Header("Linked Output Pipes")]
+    public TuyauTemp outputPipe;
 
-    [Header("Stats")]
-    [HideInInspector] public int pipeSpeed = 1;
-
-    void Start()
-    {
-        TempsFunction();
-        InvokeRepeating("PipeReceiver", 1f, 1f);
-        InvokeRepeating("PipeSender", 1f, 1f);
-    }
-
-    void Update()
-    {
-        OutputMaker();
-    }
-
-    void TempsFunction()
-    {
-        if (recipeCatalogue.simpleLC[1]) activeRecipe = recipeCatalogue.simpleLC[1];
-    }
-
-    void OutputMaker()
+    public override void OutputMaker()
     {
         string combinaison = "";
         if (inputStock1.amountInStock > 0 && inputStock2.amountInStock > 0)
@@ -58,19 +32,9 @@ public class MachineTemp : MonoBehaviour
         }
     }
 
-    bool CombinaisonChecker(string combinaison)
+    public override void PipeReceiver()
     {
-        if (activeRecipe.output == combinaison) return true;
-        char[] chars = combinaison.ToCharArray();
-        Array.Reverse(chars);
-        string reverseOutput = new string(chars);
-        if (activeRecipe.output == reverseOutput) return true;
-        return false;
-    }
-
-    void PipeReceiver()
-    {
-        if (inputPipe1) 
+        if (inputPipe1)
         {
             if (inputStock1.name == inputPipe1.itemInStock.name || inputStock1.name == "")
             {
@@ -80,7 +44,7 @@ public class MachineTemp : MonoBehaviour
             }
         }
 
-        if (inputPipe2) 
+        if (inputPipe2)
         {
             if (inputStock2.name == inputPipe2.itemInStock.name || inputStock2.name == "")
             {
@@ -91,15 +55,15 @@ public class MachineTemp : MonoBehaviour
         }
     }
 
-    void PipeSender()
+    public override void PipeSender()
     {
-        if (outputPipe1)
+        if (outputPipe)
         {
-            if (outputStock.name == outputPipe1.itemInStock.name || outputPipe1.itemInStock.name == "")
+            if (outputStock.name == outputPipe.itemInStock.name || outputPipe.itemInStock.name == "")
             {
-                if (outputPipe1.itemInStock.name == "") outputPipe1.itemInStock.name = outputStock.name;
+                if (outputPipe.itemInStock.name == "") outputPipe.itemInStock.name = outputStock.name;
                 outputStock.amountInStock -= pipeSpeed;
-                outputPipe1.itemInStock.amountInStock += pipeSpeed;
+                outputPipe.itemInStock.amountInStock += pipeSpeed;
             }
         }
     }

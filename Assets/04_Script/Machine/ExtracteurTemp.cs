@@ -8,7 +8,8 @@ public class ExtracteurTemp : MonoBehaviour
     [Header("Linked Output Pipes")]
     public TuyauTemp outputPipe;
 
-    private int pipeSpeed;
+    [Header("Stats")]
+    [HideInInspector] public int pipeSpeed = 1;
 
     private void Start()
     {

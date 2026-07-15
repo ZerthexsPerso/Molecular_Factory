@@ -3,6 +3,9 @@ using UnityEngine;
 public class ExtracteurTemp : MonoBehaviour
 {
     [Header("Input Items Stocked")]
+    public string ressourceToCollect;
+
+    [Header("Input Items Stocked")]
     public ItemStock inputStock;
 
     [Header("Linked Output Pipes")]
@@ -13,9 +16,9 @@ public class ExtracteurTemp : MonoBehaviour
 
     private void Start()
     {
+        inputStock.name = ressourceToCollect;
         InvokeRepeating("RessourceCollector", 1f, 1f);
         InvokeRepeating("PipeSender", 1f, 1f);
-
     }
 
     void RessourceCollector()

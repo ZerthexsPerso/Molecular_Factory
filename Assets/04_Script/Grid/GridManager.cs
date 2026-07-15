@@ -44,4 +44,25 @@ public class GridManager : MonoBehaviour
     {
         return grid.GetCellCenterLocal((Vector3Int)gridPos);
     }
+
+
+
+    public bool TrySet(Vector2Int pos, GameObject element)
+    {
+        if (content.Get(pos))
+        {
+            return false;
+        }
+
+        Set(pos, element);
+
+        return true;
+    }
+
+    public void Set(Vector2Int pos, GameObject element)
+    {
+        GameObject elementInstance = Instantiate(element, GetCoordinates(pos), Quaternion.identity);
+        content.content[pos.x, pos.y] = elementInstance;
+    }
+    
 }

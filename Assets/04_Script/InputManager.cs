@@ -5,9 +5,10 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
 	public const string TargetActionName = "Target";
-	public const string MainInteraction = "Main Interaction";
-	public const string SecondaryInteraction = "Secondary Interaction";
+	public const string MainInteractionActionName = "Main Interaction";
+	public const string SecondaryInteractionActionName = "Secondary Interaction";
 	public const string MoveActionName = "Movement";
+	public const string OpenBuildMenuActionName = "Open Build Menu";
 
     public static event Action<Vector2> OnMouseScreenUpdate;
 	public static event Action<Vector2> OnMoveUpdate;
@@ -15,23 +16,24 @@ public class InputManager : MonoBehaviour
 
 	public static event Action OnMainInteraction;
 	public static event Action OnSecondaryInteraction;
+	public static event Action OnOpenBuildMenu;
 
 	[SerializeField] private InputActionAsset inputs;
 	[SerializeField] private Camera camera;
 
 	private void OnEnable()
 	{
-		inputs.FindAction(MainInteraction).performed += InvokeMainInteraction;
-		inputs.FindAction(SecondaryInteraction).performed += InvokeSecondaryInteraction;
-		
+		inputs.FindAction(MainInteractionActionName).performed += InvokeMainInteraction;
+		inputs.FindAction(SecondaryInteractionActionName).performed += InvokeSecondaryInteraction;
+		inputs.FindAction(OpenBuildMenuActionName).performed += InvokeOpenBuildMenu;
 		
 	}
 	
 	private void OnDisable()
 	{
-		inputs.FindAction(MainInteraction).performed -= InvokeMainInteraction;
-		inputs.FindAction(SecondaryInteraction).performed -= InvokeSecondaryInteraction;
-		
+		inputs.FindAction(MainInteractionActionName).performed -= InvokeMainInteraction;
+		inputs.FindAction(SecondaryInteractionActionName).performed -= InvokeSecondaryInteraction;
+		inputs.FindAction(OpenBuildMenuActionName).performed -= InvokeOpenBuildMenu;
 		
 	}
 	
@@ -57,6 +59,11 @@ public class InputManager : MonoBehaviour
 	private void InvokeSecondaryInteraction(InputAction.CallbackContext context)
 	{
 		OnSecondaryInteraction?.Invoke();
+	}
+
+	private void InvokeOpenBuildMenu(InputAction.CallbackContext context)
+	{
+		OnOpenBuildMenu?.Invoke();
 	}
 	
 }

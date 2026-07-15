@@ -13,6 +13,8 @@ public class CameraController : MonoBehaviour
 
     private void EdgeMovement(Vector2 mousePosition)
     {
+        if (!new Rect(0f, 0f, Screen.width, Screen.height).Contains(mousePosition)) return;
+    
         Vector3 newPosition = camera.transform.position;
         if (mousePosition.x <= edgeZone)
         {

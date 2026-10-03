@@ -2,5 +2,6 @@ using UnityEngine;
 
 public class PipeConnexion : MonoBehaviour
 {
-	[SerializeField] Inventory linkedInventory;
+	[SerializeField] private Inventory linkedInventory;
+	public Inventory Inventory => linkedInventory;
 }

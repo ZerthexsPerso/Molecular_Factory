@@ -1,10 +1,15 @@
+using System;
+using UnityEngine;
+
+[Serializable]
 public class RessourceSlot
 {
-	Ressource ressourceType;
-	int amount;
-	int capacity;
-
+	[SerializeField] private Ressource ressourceType;
+	public Ressource RessourceType => ressourceType;
+	[SerializeField] private int amount;
 	public int Amount => amount;
+	[SerializeField] private int capacity;
+
 
 	public bool TryAdd(int addedAmount)
 	{

@@ -6,6 +6,7 @@ public class Pipe : MonoBehaviour
     const float NeighbourDetectionRange = 0.7f;
 
     public LayerMask connectionMask;
+    public RessourceSlot content;
 
     public PipeConnexion northConnection;
     public PipeConnexion southConnection;
@@ -19,7 +20,7 @@ public class Pipe : MonoBehaviour
         pipeConnector = gameObject.AddComponent<PipeConnexion>();
     }
 
-    void Start()
+    private void Start()
     {
         var connextionContactFilter = ContactFilter2D.noFilter;
         northConnection = GetAdjacentPipe(NormalizedVector2.up, connextionContactFilter);
@@ -28,7 +29,12 @@ public class Pipe : MonoBehaviour
         eastConnection = GetAdjacentPipe(NormalizedVector2.right, connextionContactFilter);
     }
 
-    PipeConnexion GetAdjacentPipe(NormalizedVector2 direction, ContactFilter2D contactFilter)
+    private void Update()
+    {
+        
+    }
+
+    private PipeConnexion GetAdjacentPipe(NormalizedVector2 direction, ContactFilter2D contactFilter)
     {
         var hitResult = Physics2D.Raycast(transform.position, direction, contactFilter, 1f, Allocator.Temp);
 
@@ -42,7 +48,14 @@ public class Pipe : MonoBehaviour
         return pipeComponent;
     }
 
-    void OnDrawGizmos()
+    private void BalanceContentWithNeighbours()
+    {
+        int totalContent = content.Amount;
+
+        // if (northConnection) totalContent += northConnection.Inventory.TryGetComponent
+    }
+
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawSphere(transform.position, 0.15f);
@@ -53,7 +66,7 @@ public class Pipe : MonoBehaviour
         if (eastConnection) DrawGizmoConnection(eastConnection);        
     }
 
-    void DrawGizmoConnection(PipeConnexion connection)
+    private void DrawGizmoConnection(PipeConnexion connection)
     {
         Gizmos.DrawLine(transform.position, connection.transform.position);
     }

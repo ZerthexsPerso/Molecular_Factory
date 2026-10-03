@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DummyMachine : MonoBehaviour
 {
-    RessourceSlot slot;
+    public RessourceSlot slot;
     Ressource ressourceInSlot;
-    public Ressource ressourceProducted;
+    public Ressource ressourceProduced;
     float producingInterval = 1;
     float time;
 
@@ -20,7 +20,7 @@ public class DummyMachine : MonoBehaviour
         time += Time.deltaTime;
         while (time >= producingInterval)
         {
-            RessourceProductor(ressourceProducted);
+            RessourceProductor(ressourceProduced);
             time -= producingInterval;
         }
     }

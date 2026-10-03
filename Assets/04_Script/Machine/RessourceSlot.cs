@@ -4,6 +4,8 @@ public class RessourceSlot
 	int amount;
 	int capacity;
 
+	public int Amount => amount;
+
 	public bool TryAdd(int addedAmount)
 	{
 		int newAmount = amount + addedAmount;

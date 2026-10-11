@@ -6,14 +6,20 @@ public class RessourceSlot
 {
 	[SerializeField] private Ressource ressourceType;
 	public Ressource RessourceType => ressourceType;
-	[SerializeField] private int amount;
-	public int Amount => amount;
-	[SerializeField] private int capacity;
+	[SerializeField] private float amount;
+	public float Amount => amount;
+	[SerializeField] private float capacity;
 
-
-	public bool TryAdd(int addedAmount)
+	public RessourceSlot(Ressource ressourceType, float amount, float capacity)
 	{
-		int newAmount = amount + addedAmount;
+		this.ressourceType = ressourceType;
+		this.amount = amount;
+		this.capacity = capacity;
+	}
+
+	public bool TryAdd(float addedAmount)
+	{
+		float newAmount = amount + addedAmount;
 
 		if (newAmount > capacity)
 		{
@@ -26,9 +32,9 @@ public class RessourceSlot
 		}
 	}
 
-	public bool TryRemove(int removedAmount)
+	public bool TryRemove(float removedAmount)
 	{
-		int newAmount = amount - removedAmount;
+		float newAmount = amount - removedAmount;
 
 		if (newAmount < 0)
 		{
@@ -39,6 +45,11 @@ public class RessourceSlot
 			amount = newAmount;
 			return true;
 		}
+	}
+
+	public void Empty()
+	{
+		amount = 0;
 	}
 }
 

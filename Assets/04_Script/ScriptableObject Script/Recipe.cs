@@ -1,61 +1,33 @@
+using NUnit.Framework;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public abstract class Recipe : ScriptableObject
+[CreateAssetMenu(fileName = "Recipe", menuName = "Recipe")]
+public class Recipe : ScriptableObject
 {
     public enum RecipeType
     {
-        SimpleLiaisonChimique,
-        DoubleLiaisonChimique,
-        TripleLiaisonChimique,
-        QuadrupleLiaisonChimique
-    }
+        Fusion,
+        Debug
+    };
 
-    public string output;
+    [SerializeField] public RecipeType type;
 
-    public abstract RecipeType Type { get; }
+    [SerializeField] public Ressource[] inputRessources;
+    [SerializeField] public Ressource outputRessource;
+    public float productionTime = 1;
 
-    public virtual string GetDescription()
+    public List<string> warningDetector()
     {
-        return $"Recette : {Type}";
-    }
-
-    [CreateAssetMenu(fileName = "SimpleLiaisonChimique", menuName = "Scriptable Objects/Recipe/SimpleLiaisonChimique")]
-    public class RecipeSimpleLiaisonChimique : Recipe
-    {
-        public override RecipeType Type => RecipeType.SimpleLiaisonChimique;
-        public string atom1;
-        public string atom2;
-    }
-
-    [CreateAssetMenu(fileName = "DoubleLiaisonChimique", menuName = "Scriptable Objects/Recipe/DoubleLiaisonChimique")]
-    public class RecipeDoubleLiaisonChimique : Recipe
-    {
-        public override RecipeType Type => RecipeType.DoubleLiaisonChimique;
-        public string atom1; 
-        public string atom2;
-        public string atom3;
-    }
-
-    [CreateAssetMenu(fileName = "TripleLiaisonChimique", menuName = "Scriptable Objects/Recipe/TripleLiaisonChimique")]
-    public class RecipeTripleLiaisonChimique : Recipe
-    {
-        public override RecipeType Type => RecipeType.TripleLiaisonChimique;
-        public string atom1;
-        public string atom2;
-        public string atom3;
-        public string atom4;
-    }
-
-    [CreateAssetMenu(fileName = "QuadrupleLiaisonChimique", menuName = "Scriptable Objects/Recipe/QuadrupleLiaisonChimique")]
-    public class RecipeQuadrupleLiaisonChimique : Recipe
-    {
-        public override RecipeType Type => RecipeType.QuadrupleLiaisonChimique;
-        public string atom1;
-        public string atom2;
-        public string atom3;
-        public string atom4;
-        public string atom5;
-    }
+        List<string> warnings = new List<string>();
+        switch (type)
+        {
+            case RecipeType.Fusion:
+                if (inputRessources.Any(item => item == null) || inputRessources.Length == 0) warnings.Add("Input items are missing");
+                if (!outputRessource) warnings.Add("Output item is missing");
+                break;
+        }
+        return warnings;
+    } 
 }
-
-

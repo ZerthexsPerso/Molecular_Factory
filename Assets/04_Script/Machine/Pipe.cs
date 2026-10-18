@@ -8,25 +8,33 @@ public class Pipe : MonoBehaviour
     public LayerMask connectionMask;
     public Inventory content;
 
-    public PipeConnexion northConnection;
-    public PipeConnexion southConnection;
-    public PipeConnexion westConnection;
-    public PipeConnexion eastConnection;
+    [SerializeField] private PipeConnexion[] pipeConnexions = new PipeConnexion[4];
 
     public PipeConnexion pipeConnector;
 
     private void Start()
     {
         var connextionContactFilter = ContactFilter2D.noFilter;
-        northConnection = GetAdjacentPipe(NormalizedVector2.up, connextionContactFilter);
-        southConnection = GetAdjacentPipe(NormalizedVector2.down, connextionContactFilter);
-        westConnection = GetAdjacentPipe(NormalizedVector2.left, connextionContactFilter);
-        eastConnection = GetAdjacentPipe(NormalizedVector2.right, connextionContactFilter);
+        pipeConnexions[0] = GetAdjacentPipe(NormalizedVector2.up, connextionContactFilter);
+        pipeConnexions[1] = GetAdjacentPipe(NormalizedVector2.down, connextionContactFilter);
+        pipeConnexions[2] = GetAdjacentPipe(NormalizedVector2.left, connextionContactFilter);
+        pipeConnexions[3] = GetAdjacentPipe(NormalizedVector2.right, connextionContactFilter);
+
+        Connect();
     }
 
     private void Update()
     {
-        BalanceContentWithNeighbours();
+        // BalanceContentWithNeighbours();
+    }
+
+    private void Connect()
+    {
+        foreach (var connexion in pipeConnexions)
+        {
+            if (!connexion) continue;
+            connexion.connexions.Add(pipeConnector);
+        }
     }
 
     private PipeConnexion GetAdjacentPipe(NormalizedVector2 direction, ContactFilter2D contactFilter)
@@ -49,31 +57,12 @@ public class Pipe : MonoBehaviour
         float neighbourCount = 0;
         Ressource currentRessource = content.GetSlotAtIndex(0).RessourceType;
 
-        float? northAmount = northConnection?.Inventory.TryGetRessourceAmount(currentRessource);
-        if (northAmount.HasValue) 
+        foreach (var connexion in pipeConnexions)
         {
-            totalContent += northAmount.Value;
-            neighbourCount++;
-        }
+            float? connexionRessourceAmount = connexion?.Inventory.TryGetRessourceAmount(currentRessource);
+            if (!connexionRessourceAmount.HasValue) continue;
 
-        float? southAmount = southConnection?.Inventory.TryGetRessourceAmount(currentRessource);
-        if (southAmount.HasValue) 
-        {
-            totalContent += southAmount.Value;
-            neighbourCount++;
-        }
-
-        float? westAmount = westConnection?.Inventory.TryGetRessourceAmount(currentRessource);
-        if (westAmount.HasValue) 
-        {
-            totalContent += westAmount.Value;
-            neighbourCount++;
-        }
-
-        float? eastAmount = eastConnection?.Inventory.TryGetRessourceAmount(currentRessource);
-        if (eastAmount.HasValue) 
-        {
-            totalContent += eastAmount.Value;
+            totalContent += connexionRessourceAmount.Value;
             neighbourCount++;
         }
 
@@ -82,28 +71,12 @@ public class Pipe : MonoBehaviour
         content.GetSlotAtIndex(0).Empty();
         content.GetSlotAtIndex(0).TryAdd(balancedAmount);
 
-        if (northConnection.Inventory.TryGetRessourceAmount(currentRessource).HasValue)
+        foreach (var connexion in pipeConnexions)
         {
-            northConnection.Inventory.GetSlotAtIndex(0).Empty();
-            northConnection.Inventory.GetSlotAtIndex(0).TryAdd(balancedAmount);
-        }
+            if (!connexion.Inventory.TryGetRessourceAmount(currentRessource).HasValue) continue;
 
-        if (southConnection.Inventory.TryGetRessourceAmount(currentRessource).HasValue)
-        {
-            southConnection.Inventory.GetSlotAtIndex(0).Empty();
-            southConnection.Inventory.GetSlotAtIndex(0).TryAdd(balancedAmount);
-        }
-
-        if (westConnection.Inventory.TryGetRessourceAmount(currentRessource).HasValue)
-        {
-            westConnection.Inventory.GetSlotAtIndex(0).Empty();
-            westConnection.Inventory.GetSlotAtIndex(0).TryAdd(balancedAmount);
-        }
-
-        if (eastConnection.Inventory.TryGetRessourceAmount(currentRessource).HasValue)
-        {
-            eastConnection.Inventory.GetSlotAtIndex(0).Empty();
-            eastConnection.Inventory.GetSlotAtIndex(0).TryAdd(balancedAmount);
+            connexion.Inventory.GetSlotAtIndex(0).Empty();
+            connexion.Inventory.GetSlotAtIndex(0).TryAdd(balancedAmount);
         }
     }
 
@@ -112,14 +85,14 @@ public class Pipe : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawSphere(transform.position, 0.15f);
 
-        if (northConnection) DrawGizmoConnection(northConnection);
-        if (southConnection) DrawGizmoConnection(southConnection);
-        if (westConnection) DrawGizmoConnection(westConnection);
-        if (eastConnection) DrawGizmoConnection(eastConnection);        
+        foreach (var connexion in pipeConnexions)
+        {
+            if (connexion) DrawGizmoConnection(connexion);
+        }
     }
 
     private void DrawGizmoConnection(PipeConnexion connection)
     {
-        Gizmos.DrawLine(transform.position, connection.transform.position);
+        // Gizmos.DrawLine(transform.position, connection.transform.position);
     }
 }

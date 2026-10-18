@@ -1,12 +1,13 @@
-using System;
-using System.Collections;
 using UnityEngine;
 
 public class DummyMachine : MonoBehaviour
 {
-    public RessourceSlot slot;
+    public Inventory inventory;
+    // public RessourceSlot slot;
+
     Ressource ressourceInSlot;
     public Ressource ressourceProduced;
+
     float producingInterval = 1;
     float time;
 
@@ -27,13 +28,13 @@ public class DummyMachine : MonoBehaviour
 
     void RessourceProductor(Ressource ressource)
     {
-        if (slot.Amount == 0)
+        if (inventory.GetSlotAtIndex(0).Amount == 0)
         {
             ressourceInSlot = ressource;
         }
         if (ressourceInSlot == ressource)
         {
-            slot.TryAdd(1);
+            inventory.GetSlotAtIndex(0).TryAdd(1);
         }
     }
 

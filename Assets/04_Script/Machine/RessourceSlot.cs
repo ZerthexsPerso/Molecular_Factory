@@ -8,7 +8,7 @@ public class RessourceSlot
 	public Ressource RessourceType => ressourceType;
 	[SerializeField] private float amount;
 	public float Amount => amount;
-	[SerializeField] private float capacity;
+	[SerializeField] private float capacity = 64;
 
 	public RessourceSlot(Ressource ressourceType, float amount, float capacity)
 	{

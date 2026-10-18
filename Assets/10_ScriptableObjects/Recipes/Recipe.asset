@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Recipe
   m_EditorClassIdentifier: Assembly-CSharp::Recipe
   type: 0
-  inputRessources:
-  - {fileID: 0}
-  - {fileID: 0}
+  inputRessources: []
+  outputRessource: {fileID: 0}
+  productionTime: 1

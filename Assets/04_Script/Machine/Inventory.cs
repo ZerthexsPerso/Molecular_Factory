@@ -34,7 +34,19 @@ public class Inventory : MonoBehaviour
 		content.Add(new RessourceSlot(type, amount, slotSize));
 	}
 
-	public RessourceSlot GetSlotAtIndex(int index)
+    public void Remove(float amount, Ressource type)
+    {
+        foreach (RessourceSlot slot in content)
+        {
+            if (slot.RessourceType == type)
+            {
+                slot.TryRemove(amount);
+                return;
+            }
+        }
+    }
+
+    public RessourceSlot GetSlotAtIndex(int index)
 	{
 		return content[index];
 	}

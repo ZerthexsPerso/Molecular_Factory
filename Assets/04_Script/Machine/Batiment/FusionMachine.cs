@@ -24,7 +24,7 @@ public class FusionMachine : MonoBehaviour
     {
         foreach (var ingredient in activeRecipe.inputRessources)
         {
-            if (inventory.TryGetRessourceAmount(ingredient.ressource) != null && inventory.TryGetRessourceAmount(ingredient.ressource) >= ingredient.amountNeeded)
+            if (inventory.TryGetRessourceAmount(ingredient.ressource) != null && inventory.TryGetRessourceAmount(ingredient.ressource) >= ingredient.amountNeeded && inventory.TryGetRessourceAmount(activeRecipe.outputRessource.ressource) + activeRecipe.outputRessource.amountProduced < inventory.SlotSize)
             {
                 continue;
             }

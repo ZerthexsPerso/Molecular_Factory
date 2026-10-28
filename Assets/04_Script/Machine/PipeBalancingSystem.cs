@@ -98,4 +98,18 @@ public class PipeBalancingSystem : MonoBehaviour
 			pipe.Inventory.GetSlotAtIndex(0).TryAdd(balancedAmount);
 		}
 	}
+
+	private static float FillAllIn(List<PipeConnexion> network, float totalAmount)
+	{
+		// Peut être changer ça un jour jsp
+		foreach (var pipe in network)
+		{
+			if (pipe.BalanceMode == BalanceMode.AllIn)
+			{
+				
+			}
+		}
+
+		return 0f;
+	}
 }

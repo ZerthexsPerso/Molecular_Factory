@@ -47,6 +47,15 @@ public class RessourceSlot
 		}
 	}
 
+	public float AddAndReturnExcess(float addedAmount)
+	{
+		var newAmount = amount + addedAmount;
+		amount = Mathf.Min(capacity, newAmount);
+		var excess = newAmount - capacity;
+
+		return excess > 0f ? excess : 0f;
+	}
+
 	public void Empty()
 	{
 		amount = 0;

@@ -36,6 +36,9 @@ public class RecipeEditor : Editor
                     EditorGUILayout.PropertyField(inputRessourceSP, true);
                     EditorGUILayout.PropertyField(outputRessourceSP, true);
                     break;
+                case Recipe.RecipeType.Extractor:
+                    EditorGUILayout.PropertyField(outputRessourceSP, true);
+                    break;
             }
         }
 

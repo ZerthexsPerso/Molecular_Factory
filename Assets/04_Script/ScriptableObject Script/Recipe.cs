@@ -22,6 +22,7 @@ public class Recipe : ScriptableObject
 {
     public enum RecipeType
     {
+        Extractor,
         Fusion,
         Debug
     };

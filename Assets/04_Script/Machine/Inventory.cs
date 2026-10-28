@@ -5,6 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
 	[SerializeField] private int slotSize;
+	public int SlotSize => slotSize;
 
 	[SerializeField] private List<RessourceSlot> content = new List<RessourceSlot>();
 
@@ -55,4 +56,5 @@ public class Inventory : MonoBehaviour
 	{
 		return content[index];
 	}
+
 }

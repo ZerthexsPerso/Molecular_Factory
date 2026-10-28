@@ -1,13 +1,7 @@
 using UnityEngine;
 
-public class FusionMachine : MonoBehaviour
+public class FusionMachine : Machine
 {
-    public Recipe activeRecipe;
-    public Inventory inventory;
-
-    float time;
-
-
     void Start()
     {
         
@@ -18,11 +12,11 @@ public class FusionMachine : MonoBehaviour
         StartProduction(CheckRecipe());
     }
 
-    bool CheckRecipe()
+    protected override bool CheckRecipe()
     {
         foreach (var ingredient in activeRecipe.inputRessources)
         {
-            if (inventory.TryGetRessourceAmount(ingredient.ressource) != null && inventory.TryGetRessourceAmount(ingredient.ressource) >= ingredient.amountNeeded && inventory.TryGetRessourceAmount(activeRecipe.outputRessource.ressource) + activeRecipe.outputRessource.amountProduced < inventory.SlotSize)
+            if ((inventory.TryGetRessourceAmount(ingredient.ressource) != null && inventory.TryGetRessourceAmount(ingredient.ressource) >= ingredient.amountNeeded && inventory.TryGetRessourceAmount(activeRecipe.outputRessource.ressource) + activeRecipe.outputRessource.amountProduced <= inventory.SlotSize) || inventory.TryGetRessourceAmount(activeRecipe.outputRessource.ressource) == null)
             {
                 continue;
             }
@@ -31,20 +25,7 @@ public class FusionMachine : MonoBehaviour
         return true;
     }
 
-    void StartProduction(bool isProductionActive)
-    {
-        if (isProductionActive)
-        {
-            time += Time.deltaTime;
-            while (time >= activeRecipe.productionTime)
-            {
-                OutputProductMaker(activeRecipe.outputRessource.ressource, activeRecipe);
-                time -= activeRecipe.productionTime;
-            }
-        }
-    }
-
-    void OutputProductMaker(Ressource ressource, Recipe recipe)
+    protected override void OutputProductMaker(Ressource ressource, Recipe recipe)
     {
         foreach(var recipeRessource in recipe.inputRessources)
         {

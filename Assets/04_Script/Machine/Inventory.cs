@@ -4,6 +4,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
 	[SerializeField] private int slotSize;
+	public int SlotSize => slotSize;
 
 	[SerializeField] private List<RessourceSlot> content = new List<RessourceSlot>();
 
@@ -24,10 +25,11 @@ public class Inventory : MonoBehaviour
 	{
 		foreach (RessourceSlot slot in content)
 		{
-			if (slot.RessourceType == type)
+            Debug.Log("gros caca qui pue");
+            if (slot.RessourceType == type)
 			{
 				slot.TryAdd(amount);
-				return;
+                return;
 			}
 		}
 
@@ -50,4 +52,5 @@ public class Inventory : MonoBehaviour
 	{
 		return content[index];
 	}
+
 }

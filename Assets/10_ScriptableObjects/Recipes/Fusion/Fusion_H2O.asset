@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25173e40330565a4babd5c07bf0c8a77, type: 3}
+  m_Name: Fusion_H2O
+  m_EditorClassIdentifier: Assembly-CSharp::Recipe
+  type: 1
+  inputRessources:
+  - ressource: {fileID: 11400000, guid: b3ae4013322e9ac44ba7f7c7d3bbe0ef, type: 2}
+    amountNeeded: 2
+  - ressource: {fileID: 11400000, guid: 8b94506396f946640936b9f2d5d1ab87, type: 2}
+    amountNeeded: 1
+  outputRessource:
+    ressource: {fileID: 11400000, guid: 3161eb494566b3949a1735c6d961c3be, type: 2}
+    amountProduced: 1
+  productionTime: 1
